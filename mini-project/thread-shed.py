@@ -107,3 +107,53 @@ green&white;,;09/15/17,   Gail Phelps   ;,;$30.52
 
 #------------------------------------------------
 # Start coding below!
+
+"""Break up `daily_sales` in easy to understand lists `customers`, `sales`, and `thread_sold`."""
+
+# Task 1 - 2
+# Replace ";,;" with ":" in daily_sales
+daily_sales_replaced = daily_sales.replace(";,;", ":")
+
+print("\n Daily Sales after replace the separator between each data in one transaction \n")
+
+print(daily_sales_replaced)
+
+# Task 3 - 4
+print("\n Daily transaction after replace the separator between each transaction \n")
+
+# Split daily_sales_replaced by "," to get daily transactions
+daily_transaction = daily_sales_replaced.split(",")
+print(daily_transaction)
+
+# Task 5
+daily_transaction_split = []
+
+# Task 6 - 7
+for i in range(len(daily_transaction)):
+  daily_transaction_split.append(daily_transaction[i].split(":"))
+
+print("\n Daily transaction after split each separator between data in one transacition \n")
+
+print(daily_transaction_split)
+
+# Task 8 - 9
+transactions_clean = []
+
+for i in range(len(daily_transaction_split)):
+    cleaned_data = [data.strip() for data in daily_transaction_split[i]]
+    transactions_clean.append(cleaned_data)
+
+print("\n Transactions after clean the white space:  \n")
+
+print(transactions_clean)
+
+# The more efficient code for task 5 - 9
+# # Replace ";,;" with ":" in daily_sales
+# daily_sales_replaced = daily_sales.replace(";,;", ":")
+
+# # Split daily_sales_replaced by "," to get daily transactions
+# daily_transactions = daily_sales_replaced.split(",")
+
+# # Split each transaction by ":" and strip whitespaces
+# transactions_clean = [transaction.split(":") for transaction in daily_transactions]
+# transactions_clean = [[data.strip() for data in transaction] for transaction in transactions_clean]
