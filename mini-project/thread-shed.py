@@ -157,3 +157,95 @@ print(transactions_clean)
 # # Split each transaction by ":" and strip whitespaces
 # transactions_clean = [transaction.split(":") for transaction in daily_transactions]
 # transactions_clean = [[data.strip() for data in transaction] for transaction in transactions_clean]
+
+# Task 10
+customers = []
+sales = []
+thread_sold = []
+
+# Task 11
+for transaction in transactions_clean:
+  customers.append(transaction[0])
+  sales.append(transaction[1])
+  thread_sold.append(transaction[2])
+
+# Task 12
+print("\n List of customer:  \n")
+
+print(customers)
+
+print("\n List of sales:  \n")
+
+print(sales)
+
+print("\n List of thread sold:  \n")
+
+print(thread_sold)
+
+"""Determine the total value of the days sales"""
+
+# Task 13
+total_sales = 0
+
+# Task 14
+for sale in sales:
+  transaction = float(sale.replace("$",""))
+  total_sales += transaction
+
+# Task 15
+print("\n Total Sales:  \n")
+print(f"${round(total_sales, 2)}")
+
+"""How much thread of any specific color was sold?"""
+
+# Task 16
+print("\n List of thread sold:  \n")
+
+print(thread_sold)
+
+# Task 17
+thread_sold_split = []
+
+# Task 18
+for item in thread_sold:
+  if "&" in item:
+    colors = item.split("&")
+    for color in colors:
+      thread_sold_split.append(color)
+  else:
+    thread_sold_split.append(item)
+
+print("\n List of thread sold splitted:  \n")
+
+print(thread_sold_split)
+
+# Task 19
+def color_count(color):
+  count = 0
+  for item in thread_sold_split:
+    if item == color:
+      count += 1
+  return count
+
+# Task 20
+print("\n Count the color of white in the list thread sold splitted:  \n")
+
+print(color_count("white"))
+
+# Task 21
+colors = list(set(thread_sold_split))
+
+print("\n List of colors that Thread Shed offers \n")
+
+print(colors)
+
+# Task 22
+print("\n Summary of Sales \n")
+
+for color in colors:
+  print(
+    "Thread Shed sold {} threads of {} thread today."
+    .format(color_count(color), color)
+  )
+
+print(f"Total Sales: ${round(total_sales, 2)}")
