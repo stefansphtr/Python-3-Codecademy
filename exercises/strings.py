@@ -176,3 +176,93 @@ def poem_title_card(title, poet):
   return "The poem \"{}\" is written by {}.".format(title, poet)
 
 print(poem_title_card("I Hear America Singing", "Walt Whitman"))
+
+# Exercise 11
+
+def poem_description(publishing_date, author, title, original_work):
+  poem_desc = "The poem {title} by {author} was originally published in {original_work} in {publishing_date}.".format(publishing_date=publishing_date, author=author, title=title, original_work=original_work)
+  return poem_desc
+
+author = "Shel Silverstein"
+title = "My Beard"
+original_work = "Where the Sidewalk Ends"
+publishing_date = "1974"
+
+my_beard_description = poem_description(publishing_date, author, title, original_work)
+
+print(my_beard_description)
+
+# Final Exercise
+
+# A string of poems, poets, and dates separated by colons and commas
+highlighted_poems = "Afterimages:Audre Lorde:1997,  The Shadow:William Carlos Williams:1915, Ecstasy:Gabriela Mistral:1925,   Georgia Dusk:Jean Toomer:1923,   Parting Before Daybreak:An Qi:2014, The Untold Want:Walt Whitman:1871, Mr. Grumpledump's Song:Shel Silverstein:2004, Angel Sound Mexico City:Carmen Boullosa:2013, In Love:Kamala Suraiyya:1965, Dream Variations:Langston Hughes:1994, Dreamwood:Adrienne Rich:1987"
+
+# Split the string into a list of strings at each comma
+highlighted_poems_list = highlighted_poems.split(",")
+
+# Print the original string
+print(highlighted_poems)
+
+print("\n")
+
+# Print the list of strings
+print(highlighted_poems_list)
+
+# Create an empty list to hold the cleaned strings
+highlighted_poems_stripped = []
+
+# Iterate over the list of strings and remove leading and trailing whitespace from each, then add it to the cleaned list
+for word in highlighted_poems_list:
+  highlighted_poems_stripped.append(word.strip())
+
+print("\n")
+
+# Print the cleaned list
+print(highlighted_poems_stripped)
+
+# Create an empty list to hold the details of each poem
+highlighted_poems_details = []
+
+# Iterate over the cleaned list and split each string into a list at each colon, then add it to the details list
+for word in highlighted_poems_stripped:
+  highlighted_poems_details.append(word.split(":"))
+
+print("\n")
+
+# Print the details list
+print(highlighted_poems_details)
+
+# Create empty lists to hold the titles, poets, and dates
+titles = []
+poets = []
+dates = []
+
+# Iterate over the details list and add the title, poet, and date from each to the appropriate list
+for list in highlighted_poems_details:
+  titles.append(list[0])
+  poets.append(list[1])
+  dates.append(list[2])
+
+print("\n FULL LIST \n")
+# Print the details list
+print(highlighted_poems_details)
+
+print("\n TITLES \n")
+# Print the titles list
+print(titles)
+print("\n POETS \n")
+# Print the poets list
+print(poets)
+print("\n DATES \n")
+# Print the dates list
+print(dates)
+
+print("\n FINAL RESULT: \n")
+
+# Iterate over the indices of the details list and print a formatted string with the title, poet, and date at each index
+for i in range(len(highlighted_poems_details)):
+  print("The poem {title} was published by {poet} in {date}".format(title=titles[i] ,poet=poets[i] ,date=dates[i]))
+
+# Alternative Iterator using enumerate
+# for i, title in enumerate(titles):
+#   print("The poem {title} was published by {poet} in {date}".format(title=title ,poet=poets[i] ,date=dates[i]))
