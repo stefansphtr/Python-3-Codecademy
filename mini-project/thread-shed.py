@@ -1,5 +1,4 @@
-daily_sales = \
-"""Edith Mcbride   ;,;$1.21   ;,;   white ;,; 
+daily_sales = """Edith Mcbride   ;,;$1.21   ;,;   white ;,; 
 09/15/17   ,Herbert Tran   ;,;   $7.29;,; 
 white&blue;,;   09/15/17 ,Paul Clarke ;,;$12.52 
 ;,;   white&blue ;,; 09/15/17 ,Lucille Caldwell   
@@ -105,7 +104,7 @@ green&white;,;09/15/17,   Gail Phelps   ;,;$30.52
 ;,; green&white&blue   ;,; 09/15/17 , Myrtle Morris 
 ;,;   $22.66   ;,; green&white&blue;,;09/15/17"""
 
-#------------------------------------------------
+# ------------------------------------------------
 # Start coding below!
 
 """Break up `daily_sales` in easy to understand lists `customers`, `sales`, and `thread_sold`."""
@@ -114,7 +113,9 @@ green&white;,;09/15/17,   Gail Phelps   ;,;$30.52
 # Replace ";,;" with ":" in daily_sales
 daily_sales_replaced = daily_sales.replace(";,;", ":")
 
-print("\n Daily Sales after replace the separator between each data in one transaction \n")
+print(
+    "\n Daily Sales after replace the separator between each data in one transaction \n"
+)
 
 print(daily_sales_replaced)
 
@@ -130,9 +131,11 @@ daily_transaction_split = []
 
 # Task 6 - 7
 for i in range(len(daily_transaction)):
-  daily_transaction_split.append(daily_transaction[i].split(":"))
+    daily_transaction_split.append(daily_transaction[i].split(":"))
 
-print("\n Daily transaction after split each separator between data in one transacition \n")
+print(
+    "\n Daily transaction after split each separator between data in one transacition \n"
+)
 
 print(daily_transaction_split)
 
@@ -165,9 +168,9 @@ thread_sold = []
 
 # Task 11
 for transaction in transactions_clean:
-  customers.append(transaction[0])
-  sales.append(transaction[1])
-  thread_sold.append(transaction[2])
+    customers.append(transaction[0])
+    sales.append(transaction[1])
+    thread_sold.append(transaction[2])
 
 # Task 12
 print("\n List of customer:  \n")
@@ -189,8 +192,8 @@ total_sales = 0
 
 # Task 14
 for sale in sales:
-  transaction = float(sale.replace("$",""))
-  total_sales += transaction
+    transaction = float(sale.replace("$", ""))
+    total_sales += transaction
 
 # Task 15
 print("\n Total Sales:  \n")
@@ -208,24 +211,26 @@ thread_sold_split = []
 
 # Task 18
 for item in thread_sold:
-  if "&" in item:
-    colors = item.split("&")
-    for color in colors:
-      thread_sold_split.append(color)
-  else:
-    thread_sold_split.append(item)
+    if "&" in item:
+        colors = item.split("&")
+        for color in colors:
+            thread_sold_split.append(color)
+    else:
+        thread_sold_split.append(item)
 
 print("\n List of thread sold splitted:  \n")
 
 print(thread_sold_split)
 
+
 # Task 19
 def color_count(color):
-  count = 0
-  for item in thread_sold_split:
-    if item == color:
-      count += 1
-  return count
+    count = 0
+    for item in thread_sold_split:
+        if item == color:
+            count += 1
+    return count
+
 
 # Task 20
 print("\n Count the color of white in the list thread sold splitted:  \n")
@@ -243,9 +248,10 @@ print(colors)
 print("\n Summary of Sales \n")
 
 for color in colors:
-  print(
-    "Thread Shed sold {} threads of {} thread today."
-    .format(color_count(color), color)
-  )
+    print(
+        "Thread Shed sold {} threads of {} thread today.".format(
+            color_count(color), color
+        )
+    )
 
 print(f"Total Sales: ${round(total_sales, 2)}")
