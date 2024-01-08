@@ -146,3 +146,98 @@ print(test_bot_2)
 print(test_bot_3)
 print(test_bot_4)
 print(test_bot_5)
+
+# 4. Controlling Them All
+
+"""Create a class variable called all_disabled which is set to False. Next, create two more class variables 
+
+called latitude and longitude. Set both of those variables to equal -999999. A third robot has been created below
+
+the first two robots. Set the latitude of all of the robots to -50.0 at once. Additionally, 
+
+set the longitude of the robots to 50.0 and set all_disabled to True. 
+
+You should be able to set those values using three lines of code."""
+
+# Answer
+class DriveBot:
+  # Create the class variables!
+    all_disabled = False
+    latitude = -999999
+    longitude = -999999
+
+    def __init__(self, motor_speed = 0, direction = 180, sensor_range = 10):
+        self.motor_speed = motor_speed
+        self.direction = direction
+        self.sensor_range = sensor_range
+    
+    def control_bot(self, new_speed, new_direction):
+        self.motor_speed = new_speed
+        self.direction = new_direction
+
+    def adjust_sensor(self, new_sensor_range):
+        self.sensor_range = new_sensor_range
+
+robot_1 = DriveBot()
+robot_1.motor_speed = 5
+robot_1.direction = 90
+robot_1.sensor_range = 10
+
+robot_2 = DriveBot(35, 75, 25)
+robot_3 = DriveBot(20, 60, 10)
+
+# Change the latitude, longitude, and all_disabled values for all three robots using only three lines of code!
+
+DriveBot.latitude = -50.0
+DriveBot.longitude = 50.0
+DriveBot.all_disabled = True
+
+print(robot_1.latitude)
+print(robot_2.longitude)
+print(robot_3.all_disabled)
+
+# 5. Identifying Robots
+
+"""Within the DriveBot class, create an instance variable called id which will be assigned to the robot when 
+
+the object is created. Every time a robot is created, increment a counter (stored as a class variable) so that 
+
+the next robot will have a different id. For example, if three robots were created: first_robot, next_robot, and last_robot;
+
+first_robot will have an id of 1 next_robot will have an id of 2 and last_robot will have an id of 3."""
+
+# Answer
+class DriveBot:
+  # Create a counter to keep track of how many robots were created
+    all_disabled = False
+    latitude = -999999
+    longitude = -999999
+    robot_count = 0
+
+    def __init__(self, motor_speed = 0, direction = 180, sensor_range = 10):
+        self.motor_speed = motor_speed
+        self.direction = direction
+        self.sensor_range = sensor_range
+        # Assign an `id` to the robot when it is constructed by incrementing the counter and assigning the value to `id`
+        DriveBot.robot_count += 1
+        self.id = DriveBot.robot_count
+    
+    def control_bot(self, new_speed, new_direction):
+        self.motor_speed = new_speed
+        self.direction = new_direction
+
+    def adjust_sensor(self, new_sensor_range):
+        self.sensor_range = new_sensor_range
+
+robot_1 = DriveBot()
+robot_1.motor_speed = 5
+robot_1.direction = 90
+robot_1.sensor_range = 10
+
+robot_2 = DriveBot(35, 75, 25)
+robot_3 = DriveBot(20, 60, 10)
+
+print(robot_1.id)
+print(robot_2.id)
+print(robot_3.id)
+
