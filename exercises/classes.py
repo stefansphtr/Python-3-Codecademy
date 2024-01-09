@@ -2,108 +2,128 @@
 class Facade:
     pass
 
+
 # Exercise 2
 class Grade:
-  minimum_passing = 65
+    minimum_passing = 65
+
 
 six_grade = Grade()
 
 print(six_grade.minimum_passing)
 
+
 # Exercise 3
 class DistanceConverter:
-  kms_in_a_mile = 1.609
-  def how_many_kms(self, miles):
-    return miles * self.kms_in_a_mile
+    kms_in_a_mile = 1.609
+
+    def how_many_kms(self, miles):
+        return miles * self.kms_in_a_mile
+
 
 converter = DistanceConverter()
 kms_in_5_miles = converter.how_many_kms(5)
 print(kms_in_5_miles)
 
+
 # Exercise 4
 class Circle:
-  pi = 3.14
-  def area(self, radius):
-    return self.pi * radius ** 2
+    pi = 3.14
+
+    def area(self, radius):
+        return self.pi * radius**2
+
 
 circle = Circle()
 
-pizza_area = circle.area(12//2)
-teaching_table_area = circle.area(36//2)
-round_room_area = circle.area(11460//2)
+pizza_area = circle.area(12 // 2)
+teaching_table_area = circle.area(36 // 2)
+round_room_area = circle.area(11460 // 2)
 
 print(pizza_area)
 print(teaching_table_area)
 print(round_room_area)
 
+
 # Exercise 5
 class Circle:
-  pi = 3.14
-  
-  # Add constructor here:
-  def __init__(self, diameter):
-    print(f"New circle with diameter: {diameter}")
+    pi = 3.14
+
+    # Add constructor here:
+    def __init__(self, diameter):
+        print(f"New circle with diameter: {diameter}")
+
 
 teaching_table = Circle(36)
-  
+
+
 # Exercise 6
 class Shuoter:
     def __init__(self, phrase):
         if type(phrase) == str:
             print(phrase.upper())
 
+
 shout1 = Shuoter("aal is gettng bigger and bigger")
+
 
 # Exercise 7
 class Store:
-  pass
+    pass
+
 
 alternative_rocks = Store()
 isabelles_ices = Store()
 
 alternative_rocks.store_name = "Alternative Rocks"
-isabelles_ices.store_name = "Isabelle\'s Ices"
+isabelles_ices.store_name = "Isabelle's Ices"
 
 # Join the strings together
-store_string = "This is the first object with the same class: {}, and this is the second one {}".format(alternative_rocks.store_name, isabelles_ices.store_name)
+store_string = "This is the first object with the same class: {}, and this is the second one {}".format(
+    alternative_rocks.store_name, isabelles_ices.store_name
+)
 
 print(store_string)
 
 # Exercise 8
-can_we_count_it = [{'s': False}, "sassafrass", 18, ["a", "c", "s", "d", "s"]]
+can_we_count_it = [{"s": False}, "sassafrass", 18, ["a", "c", "s", "d", "s"]]
 
 for item in can_we_count_it:
-  if hasattr(item, "count"):
-    print("{} has the count attribute!".format(str(type(item))))
-  else:
-    print("{} does not have the count attribute :(".format(str(type(item))))
+    if hasattr(item, "count"):
+        print("{} has the count attribute!".format(str(type(item))))
+    else:
+        print("{} does not have the count attribute :(".format(str(type(item))))
 
 
 # Exercise 9
 class Circle:
-  pi = 3.14
-  def __init__(self, diameter):
-    print("Creating circle with diameter {d}".format(d=diameter))
-    # Add assignment for self.radius here:
-    self.radius = diameter/2
+    pi = 3.14
 
-  def circumference(self):
-    return 2 * self.pi * self.radius
+    def __init__(self, diameter):
+        print("Creating circle with diameter {d}".format(d=diameter))
+        # Add assignment for self.radius here:
+        self.radius = diameter / 2
+
+    def circumference(self):
+        return 2 * self.pi * self.radius
+
 
 medium_pizza = Circle(12)
 teaching_table = Circle(36)
 round_room = Circle(11460)
 
-print(medium_pizza.circumference())  
-print(teaching_table.circumference())  
-print(round_room.circumference())  
+print(medium_pizza.circumference())
+print(teaching_table.circumference())
+print(round_room.circumference())
 
 
 # Exercise 10
 dir(10)
 
+
 def this_function_is_an_object(item):
-  return "This is only for a test"
+    return "This is only for a test"
+
 
 print(dir(this_function_is_an_object))
 
@@ -111,31 +131,37 @@ print(dir(this_function_is_an_object))
 
 from datetime import datetime
 
+
 class Student:
-  def __init__(self, name, year):
-    self.name = name 
-    self.year = year
-    self.grades = []
-    self.attendance = {}
+    def __init__(self, name, year):
+        self.name = name
+        self.year = year
+        self.grades = []
+        self.attendance = {}
 
-  def add_grade(self, grade):
-    if type(grade) is Grade:
-      self.grades.append(grade)
-  
-  def get_average(self):
-    return sum(grade.score for grade in self.grades) / len(self.grades) if self.grades else 0
+    def add_grade(self, grade):
+        if type(grade) is Grade:
+            self.grades.append(grade)
 
-  def add_attendance(self, date, is_present):
-    self.attendance[date] = is_present
+    def get_average(self):
+        return (
+            sum(grade.score for grade in self.grades) / len(self.grades)
+            if self.grades
+            else 0
+        )
+
+    def add_attendance(self, date, is_present):
+        self.attendance[date] = is_present
+
 
 class Grade:
-  minimum_passing = 65
+    minimum_passing = 65
 
-  def __init__(self, score):
-    self.score = score
+    def __init__(self, score):
+        self.score = score
 
-  def is_passing(self):
-    return self.score >= self.minimum_passing
+    def is_passing(self):
+        return self.score >= self.minimum_passing
 
 
 roger = Student("Roger van der Weyden", 10)
