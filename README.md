@@ -1,9 +1,23 @@
-# 🐍 My Python3 Learning Journey 🚀
+# <img src="./src/img/GIF Codecademy.gif" width=50> My Python3 Learning Journey <img src="./src/img/GIF Codecademy.gif" width=50>
 
-This repository documents my journey learning Python3 from Codecademy and other resources. I've organized my work into three directories: [code-challenges](code-challenges/), [exercises](exercises/), and [mini-project](mini-project/). In the [code-challenges](code-challenges/) directory, I've worked on various Python concepts like classes, control flow, dictionaries, functions, lists, loops, and strings. In the [exercises](exercises/) directory, I've practiced more Python concepts. In the [mini-project](mini-project/) directory, I've applied what I've learned in small projects. I've also included a [resources](resources/) directory with links to helpful resources. I hope you find this repository useful. Thank you for visiting!
+<p align="center">
+  <a href="#">
+    <img src="https://badges.pufler.dev/visits/stefansphtr/Python-3-Codecademy" alt="Visits Badge">
+    <img src="https://badges.pufler.dev/updated/stefansphtr/Python-3-Codecademy" alt="Updated Badge">
+    <img src="https://badges.pufler.dev/created/stefansphtr/Python-3-Codecademy" alt="Created Badge">
+    <img src="https://img.shields.io/github/contributors/stefansphtr/Python-3-Codecademy" alt="Contributors Badge">
+    <img src="https://img.shields.io/github/last-commit/stefansphtr/Python-3-Codecademy" alt="Last Commit Badge">
+    <img src="https://img.shields.io/github/commit-activity/m/stefansphtr/Python-3-Codecademy" alt="Commit Activity Badge">
+    <img src="https://img.shields.io/github/repo-size/stefansphtr/Python-3-Codecademy" alt="Repo Size Badge">
+  </a>
+</p>
+
+## 📃 Description
+This repository documents my journey learning Python3 from [Codecademy](https://www.codecademy.com/) and other resources. I've organized my work into three directories: [code-challenges](code-challenges/), [exercises](exercises/), and [mini-project](mini-project/). In the [code-challenges](code-challenges/) directory, I've worked on various Python concepts like classes, control flow, dictionaries, functions, lists, loops, and strings. In the [exercises](exercises/) directory, I've practiced more Python concepts. In the [mini-project](mini-project/) directory, I've applied what I've learned in small projects. I've also included a [resources](resources/) directory with links to helpful resources. I hope you find this repository useful. Thank you for visiting!
 
 ## 📚 Table of Contents
-- [🐍 My Python3 Learning Journey 🚀](#-my-python3-learning-journey-)
+- [ My Python3 Learning Journey ](#-my-python3-learning-journey-)
+  - [📃 Description](#-description)
   - [📚 Table of Contents](#-table-of-contents)
   - [💡 Code Challenges](#-code-challenges)
   - [🏋️‍♀️ Exercises](#️️-exercises)
